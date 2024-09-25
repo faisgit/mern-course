@@ -2,14 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import productRoutes from './routes/product_routes.js'
+import cors from "cors";  // Import CORS
 dotenv.config();
 const app = express();
 
-// app.get('/', (req, res ) => {
-//     res.send('Server is ready')
-// })
 
-// console.log(process.env.MONGO_URI)
+app.use(cors());  // Add this line to enable CORS
 
 app.use(express.json()); // allow us to accept the json data in the req.body
 
